@@ -1,28 +1,29 @@
 <?php
 
-class MyForms
+class MyForms extends Forms
 {
-    # FastForm instructions available at: https://formr.github.io/fastform/
-    
+    # this class will let you create and save your own FastForm forms
+    # instructions available at: https://formr.github.io/fastform/
+
     # here's a sample FastForm login form to get you started
     public static function my_login($validate = '')
     {
         if (!$validate) {
 
-            // let's build the form
-            // we'll add a text field, a password field, and a submit button
+            // we'll build the form in this block
+            // let's add a text field, a password field, and a submit button
 
             // array key = type of form field
-            // array value = field name, field label, default value, field ID, Bootstrap help text, custom string
+            // array value = field name, field label, default value, field ID, custom string
 
             return [
-                'text' => 'username,Username,,usernameID,,placeholder="Enter your username"',
-                'password' => 'password,Password,,passwordID,,placeholder="Enter your password"',
+                'text' => 'username,Username,,usernameID,placeholder="Enter your username"',
+                'password' => 'password,Password,,passwordID,placeholder="Enter your password"',
                 'submit' => 'submit,,Login'
             ];
         } else {
 
-            // let's validate our form
+            // we'll validate our form in this block
 
             // array key = field name
             // array value = ['Human readable error message text', 'Validation Methods']
