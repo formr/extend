@@ -4,7 +4,7 @@ This repo contains classes which will extend Formr by creating your own custom [
 
 ## Installation
 
-[Install Formr](https://github.com/formr/formr) into your project, then download this repo and put the `my_classes` folder into your `Formr` folder. That's it, you're ready to go!
+Install [Formr](https://github.com/formr/formr) into your project, then download this repo and put the `my_classes` folder into your `Formr` folder. That's it, you're ready to go!
 
 Note that your custom method names have to be unique, so it's a good idea to either prepend your methods with a unique word, such as `"my"` e.g.; `myDropdownMenu`, or look inside the appropriate class in `Formr/lib/` to make sure it isn't already used by Formr.
 
@@ -12,7 +12,7 @@ Note that your custom method names have to be unique, so it's a good idea to eit
 
 As you know, a `<select>` menu (dropdown) is nothing more than a series of option tags, consisting of a `value` and a `string` of text contained inside the element.
 
-```
+```html
 <label>Say Hi!</label>
 <select name="hello">
     <option value="hello_world">Hello, World!</option>
@@ -21,7 +21,7 @@ As you know, a `<select>` menu (dropdown) is nothing more than a series of optio
 
 This is really easy to create in Formr, as the dropdown menus are nothing more than simple arrays. Just give your custom dropdown method a name, then assign the select menu's `option value` to the `array key`, and the `option string` to the `array value`.
 
-```
+```php
 class MyDropdowns extends Dropdowns
 {
     public static function my_hello()
@@ -35,7 +35,7 @@ class MyDropdowns extends Dropdowns
 
 And then use it like so
 
-```
+```php
 echo $form->dropdown('hello','Say Hi!','','','','','','my_hello');
 ```
 
@@ -49,12 +49,12 @@ You can create your own forms to be used with [FastForm](https://formr.github.io
 2. The array `value` contains the element's parameters.
 
 ###### This is how you would normally add an `<input type="text">` element in Formr
-```
+```php
 echo $form->input_text('name','Your name','','nameID','placeholder="Your name"');
 ```
 
 ###### This is how you would build the same `<input type="text">` element for FastForm. As you can see, they're basically the same thing!
-```
+```php
 'text' => 'name,Your name,,nameID,placeholder="Your name"'
 ```
 
@@ -65,14 +65,14 @@ Validating your custom forms is just as easy!
 1. The array `key` is the form field's `name`.
 2. The array `value` is an array which contains an error message string, and the validation methods.
 
-```
+```php
 'username' => ['Username|Please enter your username', 'required|min[3]'],
 ```
 
 #### Example Login Form
 This is the example login form that comes with the `MyForms` class. Notice how you build your form - and validate it - with simple arrays?
 
-```
+```php
 class MyForms extends Forms
 {
    public static function myLogin($validate='')
@@ -97,7 +97,7 @@ class MyForms extends Forms
 
 Here's an example of how to use it in your page.
 
-```
+```php
 <!DOCTYPE html>
 <head>
     <title>Login</title>
@@ -129,7 +129,7 @@ Creating custom wrappers in Formr is a bit more complicated and should only be d
 
 The best way to get started with Wrappers is to take a look at the `simple_wrapper()` method and play around with it.
 
-```
+```php
 class MyWrappers extends Wrapper
 {
    public function simple_wrapper($element='', $data='')
@@ -169,7 +169,7 @@ class MyWrappers extends Wrapper
 ```
 
 #### Let's try the simple_wrapper()
-```
+```php
 $form = new Formr('simple_wrapper');
 echo $form->text('name', 'Name');
 
