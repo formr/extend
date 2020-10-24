@@ -75,7 +75,7 @@ This is the example login form that comes with the `MyForms` class. Notice how y
 ```php
 class MyForms extends Forms
 {
-   public static function myLogin($validate='')
+   public static function my_login($validate='')
    {
       if (!$validate) {
          // build the form
@@ -109,14 +109,14 @@ Here's an example of how to use it in your page.
    if($form->submitted())
    {
        // validate the $_POST data
-       $post = $form->fastpost('myLogin');
+       $post = $form->fastpost('my_login');
 
        $username = $post['username'];
        $password = $post['password'];
    }
 
    // print the form
-   echo $form->fastform('myLogin');
+   echo $form->fastform('my_login');
 ?>
 </body>
 </html>
