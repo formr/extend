@@ -1,5 +1,6 @@
 <?php
 
+#[AllowDynamicProperties]
 class MyForms extends Forms
 {
     # this class will let you create and save your own FastForm forms

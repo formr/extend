@@ -1,5 +1,6 @@
 <?php
 
+#[AllowDynamicProperties]
 class MyWrappers extends Wrapper
 {
     # this is where you will put your custom wrappers

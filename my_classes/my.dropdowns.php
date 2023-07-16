@@ -1,5 +1,6 @@
 <?php
 
+#[AllowDynamicProperties]
 class MyDropdowns extends Dropdowns
 {
     # here's a sample dropdown to get you started
